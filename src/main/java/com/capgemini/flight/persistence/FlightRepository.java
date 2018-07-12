@@ -7,8 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FlightRepository extends CrudRepository<Flight, Long> {
 
-    Flight findByName (String flightName);
-
-    Iterable<Flight> findAllByOrderByNameAsx();
+    Iterable<Flight> findAllByOrderByNameAsc();
 
 }

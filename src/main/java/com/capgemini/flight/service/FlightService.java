@@ -21,7 +21,7 @@ public class FlightService {
             Flight flight = new Flight();
             flight.setSerialNumber(i);
             flight.setModel("A00"+i);
-            flight.setName("Flgiht"+i);
+            flight.setName("Flight"+i);
 
             this.flightRepository.save(flight);
         }
@@ -39,10 +39,6 @@ public class FlightService {
 
     public Optional<Flight> findById(long id){
         return this.flightRepository.findById(id);
-    }
-
-    public Flight findByName(String name) {
-        return this.flightRepository.findByName(name);
     }
 
     @Transactional

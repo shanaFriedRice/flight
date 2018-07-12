@@ -24,6 +24,11 @@ public class FlightController {
 
     }
 
+    @GetMapping
+    public ResponseEntity<Iterable<Flight>> list() {
+        return new ResponseEntity<Iterable<Flight>>(this.flightService.findAll(),HttpStatus.OK);
+    }
+
     @GetMapping("{id}")
     public ResponseEntity<Flight> findById(@PathVariable long id) {
         Optional<Flight> result = this.flightService.findById(id);
